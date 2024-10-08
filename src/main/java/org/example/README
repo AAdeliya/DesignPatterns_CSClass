@@ -89,5 +89,4 @@ display(): Prints the current state of the cache.
 This is a concrete observer that implements CacheObserver and reacts to cache events by printing log messages. It is notified by the Cache class when cache events such as adding, removing, or eviction occur.
 
 Method:
-
 update(String message): Receives updates from the cache and logs messages.
