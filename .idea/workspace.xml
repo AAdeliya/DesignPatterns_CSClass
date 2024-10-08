@@ -4,26 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba3bacb-e24e-46be-b15e-b99ecb3cf16b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/CacheBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/CacheEvictionPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/CacheInvalidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/CacheObservable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/CacheObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/FIFO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/FIFOEvictionPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/LRU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CacheImplementation/LRUEvictionPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/README" afterDir="false" />
+    <list default="true" id="7ba3bacb-e24e-46be-b15e-b99ecb3cf16b" name="Changes" comment="2 homeworks">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +55,19 @@
       <option name="presentableId" value="Default" />
       <updated>1728398060331</updated>
     </task>
+    <task id="LOCAL-00001" summary="2 homeworks">
+      <option name="closed" value="true" />
+      <created>1728418787188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728418787188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2 homeworks" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 homeworks" />
   </component>
 </project>
