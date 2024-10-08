@@ -1,0 +1,92 @@
+Cache Implementation with Singleton, Builder, Observer, and Strategy Design Patterns
+
+Overview
+This project implements a cache system with support for multiple eviction strategies like LRU (Least Recently Used) and FIFO (First In, First Out). The design leverages four core design patterns to provide flexibility and maintainability:
+
+Singleton Pattern: Ensures that only one instance of CacheBuilder is used throughout the application.
+Builder Pattern: Allows flexible configuration and construction of caches with different eviction strategies.
+Observer Pattern: Notifies registered observers of cache events such as additions, removals, and evictions.
+Strategy Pattern: Decouples the eviction policy, allowing the use of different eviction strategies (LRU, FIFO) without modifying the core cache logic.
+
+
+Features
+Singleton Pattern: Guarantees only one instance of CacheBuilder exists, ensuring consistency in cache creation.
+Builder Pattern: Provides a flexible interface to build caches with different capacities and eviction policies.
+Observer Pattern: Allows external observers to be notified when cache events occur (e.g., cache entries being added, removed, or evicted).
+Strategy Pattern: Supports multiple eviction strategies (LRU, FIFO) that can be dynamically selected at runtime.
+
+
+Design Patterns Used
+1. Singleton Pattern
+The CacheBuilder class is implemented as a singleton, ensuring only one instance is used throughout the application. This ensures consistency and centralized control when creating cache instances.
+
+Class: CacheBuilder
+Method:
+getInstance(): Returns the singleton instance of CacheBuilder.
+2. Builder Pattern
+The Builder Pattern allows for the flexible creation of caches with configurable capacity and eviction policy. By using the builder, you can easily create different cache types without hardcoding the logic.
+
+Class: CacheBuilder
+Methods:
+withCapacity(int capacity): Sets the cache capacity.
+withEvictionPolicy(CacheEvictionPolicy evictionPolicy): Sets the eviction strategy (LRU, FIFO).
+build(): Constructs and returns the cache instance based on the configured options.
+3. Observer Pattern
+The Observer Pattern is used to notify external objects (observers) when certain cache events happen, such as when a key is added, accessed, removed, or evicted. This pattern is helpful for tasks like logging, cache invalidation, and monitoring.
+
+Classes:
+
+CacheObservable: Provides methods to manage and notify observers.
+CacheObserver: Interface for observers to implement the update(String message) method.
+CacheInvalidator: A concrete implementation of CacheObserver that reacts to cache events.
+Methods:
+
+addObserver(CacheObserver observer): Adds an observer to the cache.
+notifyObservers(String message): Notifies all registered observers of a cache event.
+4. Strategy Pattern
+The Strategy Pattern is used to decouple the eviction logic from the core cache implementation. The eviction policy (e.g., LRU, FIFO) is chosen at runtime, allowing flexibility in how the cache handles eviction without modifying the cache's internal logic.
+
+Interface: CacheEvictionPolicy<K, V>
+Defines the evict(Map<K, V> cache, Deque<K> order) method that all eviction strategies must implement.
+Concrete Strategy Classes:
+LRUEvictionPolicy<K, V>: Implements the least recently used eviction policy.
+FIFOEvictionPolicy<K, V>: Implements the first-in-first-out eviction policy.
+Methods:
+evict(Map<K, V> cache, Deque<K> order): Performs eviction based on the chosen strategy.
+
+
+Classes
+1. CacheBuilder
+The CacheBuilder class is responsible for configuring and building cache instances. It uses the Singleton and Builder Patterns.
+
+Methods:
+getInstance(): Returns the singleton instance of CacheBuilder.
+withCapacity(int capacity): Sets the cache capacity.
+withEvictionPolicy(CacheEvictionPolicy evictionPolicy): Sets the eviction policy.
+build(): Builds and returns the cache instance.
+2. CacheEvictionPolicy Interface
+This interface defines the eviction behavior and is used to decouple the eviction logic from the cache.
+
+Method:
+evict(Map<K, V> cache, Deque<K> order): Evicts an entry from the cache based on the strategy.
+3. LRUEvictionPolicy and FIFOEvictionPolicy
+These classes implement specific eviction strategies as part of the Strategy Pattern.
+
+LRUEvictionPolicy: Implements eviction of the least recently used entry.
+FIFOEvictionPolicy: Implements eviction of the oldest entry.
+4. Cache Class
+The Cache class represents the core cache functionality. It uses the Strategy Pattern to apply the selected eviction policy and the Observer Pattern to notify observers when cache events occur.
+
+Methods:
+put(K key, V value): Adds an entry to the cache and applies the eviction policy if the cache is full.
+get(K key): Retrieves the value for the given key.
+remove(K key): Removes a key-value pair from the cache.
+addObserver(CacheObserver observer): Adds an observer to the cache.
+notifyObservers(String message): Notifies observers about cache events.
+clear(): Clears all entries from the cache.
+display(): Prints the current state of the cache.
+5. CacheInvalidator
+This is a concrete observer that implements CacheObserver and reacts to cache events by printing log messages. It is notified by the Cache class when cache events such as adding, removing, or eviction occur.
+
+Method:
+update(String message): Receives updates from the cache and logs messages.
